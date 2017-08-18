@@ -9,7 +9,7 @@ Build-Depends:
  python-setuptools
 Standards-Version: 3.9.4
 Homepage: http://trac-hacks.org/wiki/TagsPlugin
-Vcs-Git: git://lair.fifthhorseman.net/~dkg/trac-tags
+Vcs-Git: https://github.com/lod/trac-tags.git
 
 Package: trac-tags
 Architecture: all
@@ -18,7 +18,7 @@ Depends: ${shlibs:Depends},
  ${misc:Depends},
  python-genshi ( >= 0.5 ),
  python-pkg-resources,
- trac
+ trac ( >= 1.2 )
 Provides: ${python:Provides}
 Description: Tagging plugin for Trac wiki and issue tracking system
  The Trac Tags plugin implements both a generic tagging engine, and

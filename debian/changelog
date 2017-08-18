@@ -1,3 +1,11 @@
+trac-tags (0.10dev+svn16296-1) unstable; urgency=low
+
+  * New Upstream Version
+   - requires trac >= 1.2
+   - supports trac >= 1.2
+
+ -- David Tulloh <debian-david@tulloh.id.au>  Fri, 18 Aug 2017 11:35:18 +1000
+
 trac-tags (0.7+svn12392-1) unstable; urgency=low
 
   * New Upstream Version.
