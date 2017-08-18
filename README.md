@@ -16,6 +16,8 @@ I recommend build a source package, then using that to build the binary.
 
 ### Build source package
 
+From the repository directory
+
   $ make -f debian/rules get-orig-source
   $ tar xzf trac-tags_0.10dev+svn16296.orig.tar.gz 
   $ mv trac-tags_0.10dev+svn16296.orig.tar.gz ../
@@ -48,3 +50,8 @@ From the parent directory
 
   $ sudo dpkg -i trac-tags_0.10dev+svn16296-1_all.deb
 
+### Clean the repository directory
+
+From the repository directory
+
+  $ git clean -d -f
