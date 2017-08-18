@@ -3,6 +3,7 @@ Section: web
 Priority: extra
 Maintainer: Daniel Kahn Gillmor <dkg@fifthhorseman.net>
 Build-Depends:
+ dpkg-dev (>=1.17),
  debhelper (>= 9),
  python (>= 2.6.6-3~),
  python-babel ( >= 0.9.5 ),

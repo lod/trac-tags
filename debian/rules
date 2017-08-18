@@ -26,8 +26,8 @@ $(PKG)_$(VER).orig.tar.gz:
 	@echo "# Rebuilding..."
 	unzip "svn$(REV).zip" -d "svn$(REV)"
 	# Files are in svn$(REV)/trunk/
-	# Want them to be in $(PKG)-$(VER)/
-	tar czf "$(PKG)_$(VER).orig.tar.gz" --transform 's/^trunk/$(PKG)-$(VER)/' -C "svn$(REV)" trunk
+	# Want them to be in the root
+	tar czf "$(PKG)_$(VER).orig.tar.gz" -C "svn$(REV)/trunk" .
 	@echo "# Cleaning..."
 	rm -rf "svn$(REV)"
 	rm -f "svn$(REV).zip"
