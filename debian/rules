@@ -1,3 +1,33 @@
 #!/usr/bin/make -f
+
+PKD   = $(abspath $(dir $(MAKEFILE_LIST)))
+PKG   = $(shell dpkg-parsechangelog -l$(PKD)/changelog -S Source)
+DVER  = $(shell dpkg-parsechangelog -l$(PKD)/changelog -S Version)
+VER   = $(shell echo $(DVER) | sed 's/^\(.*\)-[0-9]*$$/\1/')
+REV   = $(shell echo $(DVER) | sed 's/^.*+svn\([0-9]*\).*/\1/')
+
+debug:
+	@echo $(PKD)
+	@echo $(PKG)
+	@echo $(DVER)
+	@echo $(VER)
+	@echo $(REV)
+
 %:
 	dh $@ --with python2
+
+.PHONY: get-orig-source
+get-orig-source: $(PKG)_$(VER).orig.tar.gz $(info I: $(PKG)_$(VER))
+	@
+
+$(PKG)_$(VER).orig.tar.gz:
+	@echo "# Downloading..."
+	wget "https://trac-hacks.org/browser/tagsplugin/trunk?rev=$(REV)&format=zip" -O "svn$(REV).zip"
+	@echo "# Rebuilding..."
+	unzip "svn$(REV).zip" -d "svn$(REV)"
+	# Files are in svn$(REV)/trunk/
+	# Want them to be in $(PKG)-$(VER)/
+	tar czf "$(PKG)_$(VER).orig.tar.gz" --transform 's/^trunk/$(PKG)-$(VER)/' -C "svn$(REV)" trunk
+	@echo "# Cleaning..."
+	rm -rf "svn$(REV)"
+	rm -f "svn$(REV).zip"
