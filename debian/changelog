@@ -1,0 +1,46 @@
+trac-tags (0.7+svn12392-1) unstable; urgency=low
+
+  * New Upstream Version.
+   - requires a database upgrade to any trac instance that has
+     the tags plugin enabled.
+  * bumped Standards-Version to 3.9.4 (no changes needed)
+  * move to dh 9
+  * adjust build-depends to ensure i18n is provided
+
+ -- Daniel Kahn Gillmor <dkg@fifthhorseman.net>  Fri, 29 Mar 2013 12:22:42 -0400
+
+trac-tags (0.6.0+svn11105-1) unstable; urgency=low
+
+  * new upstream pull from SVN.
+  * bumped Standards-Version to 3.9.3 (no changes needed)
+
+ -- Daniel Kahn Gillmor <dkg@fifthhorseman.net>  Fri, 27 Apr 2012 12:08:57 -0400
+
+trac-tags (0.6.0+svn10671-1) unstable; urgency=low
+
+  * new upstream pull from SVN.  This includes an API change by allowing
+    comments on tag changes (see
+    https://trac-hacks.org/ticket/9061#comment:12)
+  * correct README.Debian.  Thanks, Libor Klepáč (Closes: #642201)
+  * drop fix-tags-link.patch; better fix upstream.
+  * transition to dh_python2
+
+ -- Daniel Kahn Gillmor <dkg@fifthhorseman.net>  Thu, 22 Sep 2011 18:01:06 -0400
+
+trac-tags (0.6.0+svn9419-2) unstable; urgency=low
+
+  * added README.Debian
+  * debian/patches/fix-tags-link.patch: fix for
+    https://trac-hacks.org/ticket/8684
+  * debian/control: remove article from synopsis (thanks, Lintian!)
+  * bumped Standards-Version to 3.9.2 (no changes needed)
+  * debian/source/local-options: added unapply-patches
+
+ -- Daniel Kahn Gillmor <dkg@fifthhorseman.net>  Tue, 19 Apr 2011 11:42:23 -0400
+
+trac-tags (0.6.0+svn9419-1) unstable; urgency=low
+
+  * Initial upload into debian (Closes: #505716)
+
+ -- Daniel Kahn Gillmor <dkg@fifthhorseman.net>  Thu, 03 Mar 2011 00:50:36 -0500
+

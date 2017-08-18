@@ -1,0 +1,58 @@
+Using the Trac Tags Plugin on Debian
+====================================
+
+Installation
+============
+
+To enable the Tags plugin in a specific trac instance, you need to add
+one line to the [components] section of trac.ini:
+
+ [components]
+ tractags.* = enabled
+
+
+Configuration
+=============
+
+Plugin configuration is done in the [tags] stanza of trac.ini.
+Only two config variables are supported as of TracTags 0.6:
+
+ [tags]
+ ignore_closed_tickets = false
+ ticket_fields = component, keywords
+
+
+Troubleshooting
+===============
+
+Tags features not showing up in your trac web UI?  Here are some
+pointers to get you started:
+
+Permissions
+-----------
+
+Remember that you need to grant TAGS_VIEW and/or TAGS_MODIFY to the
+relevant user account.  You can do this with trac-admin.
+
+Older versions getting in the way
+---------------------------------
+
+If you have had an older (non-debian-packaged) version of trac-tags
+installed, it might take precedence over the debian-packaged version.
+
+To fix that, Make sure you get rid of (or move out of the way) all
+instances of that installation.  Here's one (disk-thrashing) way to
+look for all copies (including files from this package, so use good
+judgement when cleaning up!):
+
+ find / -iname '*tractags*'
+
+
+More Info
+=========
+
+For more info, please see:
+
+http://trac-hacks.org/wiki/TagsPlugin
+
+ -- Daniel Kahn Gillmor <dkg@fifthhorseman.net>, Thu, 22 Sep 2011 17:59:21 -0400

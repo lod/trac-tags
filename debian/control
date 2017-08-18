@@ -1,0 +1,28 @@
+Source: trac-tags
+Section: web
+Priority: extra
+Maintainer: Daniel Kahn Gillmor <dkg@fifthhorseman.net>
+Build-Depends:
+ debhelper (>= 9),
+ python (>= 2.6.6-3~),
+ python-babel ( >= 0.9.5 ),
+ python-setuptools
+Standards-Version: 3.9.4
+Homepage: http://trac-hacks.org/wiki/TagsPlugin
+Vcs-Git: git://lair.fifthhorseman.net/~dkg/trac-tags
+
+Package: trac-tags
+Architecture: all
+Depends: ${shlibs:Depends},
+ ${python:Depends},
+ ${misc:Depends},
+ python-genshi ( >= 0.5 ),
+ python-pkg-resources,
+ trac
+Provides: ${python:Provides}
+Description: Tagging plugin for Trac wiki and issue tracking system
+ The Trac Tags plugin implements both a generic tagging engine, and
+ frontends for the Wiki and ticket systems. An extra text entry box is
+ added to the Wiki edit page for tagging Wiki pages, and ticket fields
+ (you can configure which ones) are treated as tags for the ticket
+ system.
