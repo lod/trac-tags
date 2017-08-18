@@ -18,10 +18,10 @@ I recommend build a source package, then using that to build the binary.
 
 From the repository directory
 
-  $ make -f debian/rules get-orig-source
-  $ tar xzf trac-tags_0.10dev+svn16296.orig.tar.gz 
-  $ mv trac-tags_0.10dev+svn16296.orig.tar.gz ../
-  $ dpkg-source -i'.git|README.md' -b .
+    $ make -f debian/rules get-orig-source
+    $ tar xzf trac-tags_0.10dev+svn16296.orig.tar.gz 
+    $ mv trac-tags_0.10dev+svn16296.orig.tar.gz ../
+    $ dpkg-source -i'.git|README.md' -b .
 
 This will generate three files in the parent directory:
 
@@ -33,9 +33,9 @@ This will generate three files in the parent directory:
 
 From the parent directory
 
-  $ dpkg-source -x trac-tags_0.10dev+svn16296-1.dsc
-  $ cd trac-tags-0.10dev+svn16296/
-  $ debuild -us -uc
+    $ dpkg-source -x trac-tags_0.10dev+svn16296-1.dsc
+    $ cd trac-tags-0.10dev+svn16296/
+    $ debuild -us -uc
 
 This will generate the following files in the parent directory:
 
@@ -48,10 +48,10 @@ This will generate the following files in the parent directory:
 
 From the parent directory
 
-  $ sudo dpkg -i trac-tags_0.10dev+svn16296-1_all.deb
+    $ sudo dpkg -i trac-tags_0.10dev+svn16296-1_all.deb
 
 ### Clean the repository directory
 
 From the repository directory
 
-  $ git clean -d -f
+    $ git clean -d -f
