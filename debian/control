@@ -6,7 +6,8 @@ Build-Depends:
  debhelper (>= 9),
  python (>= 2.6.6-3~),
  python-babel ( >= 0.9.5 ),
- python-setuptools
+ python-setuptools,
+ dh-python
 Standards-Version: 3.9.4
 Homepage: http://trac-hacks.org/wiki/TagsPlugin
 Vcs-Git: https://github.com/lod/trac-tags.git
